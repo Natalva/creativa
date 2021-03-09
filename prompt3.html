@@ -25,29 +25,62 @@
 
 <body> 
 
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="index.html">Home</a>
+    <a href="pg2.html">Work</a>
+      <a href="about.html">Contact</a>
+  </div>
 
-<div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a href="index.html">Home</a>
-  <a href="pg2.html">Work</a>
-    <a href="about.html">Contact</a>
-</div>
-
-<div id="main">
-  <button class="openbtn" onclick="openNav()">☰</button>  
-</div>
-
- 
+  <div id="main">
+    <button class="openbtn" onclick="openNav()">☰</button>  
+  </div>
 
 
-<!-- horozontal scroll -->
- <div id="workpage">
-	<h1> SPOOKY </h1>
-</div>
+  <!-- horozontal scroll -->
+   <div id="workpage">
+  	<h1> Room 3 </h1>
+  </div>
 
- 
- 
-  
+   
+
+
+
+   <script>
+            function setup() {
+                document.getElementById('buttonid').addEventListener('click', openDialog);
+                function openDialog() {
+                    document.getElementById('fileid').click();
+                }
+                document.getElementById('fileid').addEventListener('change', submitForm);
+                function submitForm() {
+                    document.getElementById('formid').submit();
+                }
+            }
+        </script> 
+
+
+    </head>
+    <body onload="setup()">
+        <form id='formid' action="form.php" method="POST" enctype="multipart/form-data"> 
+            <input id='fileid' type='file' name='filename' hidden/>
+            <input id='buttonid' type='button' value='Upload' /> 
+            <input type='submit' value='Submit' /> 
+        </form> 
+
+
+<!--    
+
+  <p>Click on the "Choose File" button to upload a file:</p>
+
+  <form action="/action_page.php">
+    <input type="file" id="myFile" name="filename">
+    <input type="submit">
+  </form> -->
+
+   
+    
+
 
  
 
